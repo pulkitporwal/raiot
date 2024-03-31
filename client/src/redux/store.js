@@ -22,8 +22,8 @@ export const store = configureStore({
 
 export const persistor = persistStore(store);
 
-export function removeDataFromLocalStorage() {
-	persistor.purge().then(() => {
-		console.log("All data cleared from localStorage");
-	});
-}
+// export function removeDataFromLocalStorage() {
+// 	persistor.purge().then(() => {
+// 		console.log("All data cleared from localStorage");
+// 	});
+// }
