@@ -4,8 +4,12 @@ import cors from "cors";
 
 const app = express();
 
-app.use(cors());
-app.use(express.json({ limit: "20kb" }));
+const allowedOrigins = [
+    "http://localhost:5173"
+]
+
+app.use(cors({ origin: "*" , credentials: true }));
+app.use(express.json({limit: "20kb"}));
 app.use(express.urlencoded({ limit: "20kb", extended: true }));
 app.use(cookieParser());
 

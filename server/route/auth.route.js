@@ -8,6 +8,9 @@ router.route("/signup").post(signup);
 import { signin } from "../controller/auth.controller.js";
 router.route("/signin").post(signin);
 
+// import {test} from '../controller/auth.controller.js'
+// router.route("/test").route(test)
+
 import { signout } from "../controller/auth.controller.js";
 import verifyJWT from '../utils/verifyJWT.js'
 router.route("/signout").post(verifyJWT,signout);

@@ -4,6 +4,8 @@ import jwt from "jsonwebtoken";
 const signup = async (req, res) => {
     const { userName, email, fullName, password, confirmPassword } = req.body;
 
+    console.log(req.body);
+
     if (!userName || !email || !password || !confirmPassword) {
         return res.status(400).json({
             success: false,
@@ -28,10 +30,20 @@ const signup = async (req, res) => {
             });
         }
 
+        // Check if the username already exists
+        const existingUsername = await User.findOne({ userName });
+
+        if (existingUsername) {
+            return res.status(400).json({
+                success: false,
+                message: "Username is already taken.",
+            });
+        }
+
         const newUser = await User.create({
             email,
             fullName,
-            userName,
+            userName, // Ensure userName is set here
             password,
         });
 
@@ -53,43 +65,43 @@ const signup = async (req, res) => {
 
 const signin = async (req, res) => {
     const { userNameOrEmail, password } = req.body;
-  
+
     if (!userNameOrEmail || !password) {
         return res.status(400).json({
             success: false,
             message: "Both username/email and password are required",
         });
     }
-  
+
     try {
         const user = await User.findOne({
             $or: [{ userName: userNameOrEmail }, { email: userNameOrEmail }],
         });
-  
+
         if (!user) {
             return res.status(404).json({
                 success: false,
                 message: "User not found with the provided credentials",
             });
         }
-  
+
         const isPasswordCorrect = await user.comparePassword(password);
-  
+
         if (!isPasswordCorrect) {
             return res.status(401).json({
                 success: false,
                 message: "Incorrect password",
             });
         }
-  
+
         const token = jwt.sign(
             { userName: user.userName, _id: user._id },
             process.env.JWT_SECRET,
             { expiresIn: "1h" }
         );
-        res.cookie("accessToken", token, { httpOnly: true})
-  
+
         return res
+            .cookie("accessToken", token, { httpOnly: true, secure: true })
             .status(200)
             .json({
                 success: true,
@@ -109,7 +121,7 @@ const signout = async (req, res) => {
     try {
         return res
             .status(200)
-            .clearCookie("accessToken", { httpOnly: true})
+            .clearCookie("accessToken", { httpOnly: true })
             .json({
                 success: true,
                 message: "User signed out successfully",
@@ -123,4 +135,8 @@ const signout = async (req, res) => {
     }
 };
 
-export { signup, signin, signout };
+const test = async (req, res) => {
+    res.cookie("token", "12345689", { httpOnly: true });
+};
+
+export { signup, signin, signout, test };

@@ -9,6 +9,7 @@ import Conditions from "./pages/Conditions";
 import Terms from "./pages/Terms";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar.jsx"
+import MarkAttendance from "./pages/MarkAttendance.jsx";
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 
 				<Route element={<ProtectedRoute />}>
 					<Route path="/dashboard" element={<Dashboard />} />
+					<Route path="/mark-attendance" element={<MarkAttendance />} />
 					<Route path="/profile" element={<Profile />} />
 				</Route>
 			</Routes>

@@ -23,11 +23,19 @@ const Signin = () => {
 		});
 	};
 
-	// useEffect(() => {
-	// 	if (information.userInfo) {
-	// 		navigate("/dashboard");
-	// 	}
-	// }, [information.userInfo, navigate]);
+	useEffect(() => {
+		if (information.userInfo) {
+			navigate("/dashboard");
+		}
+	}, [information.userInfo, navigate]);
+
+	useEffect(() => {
+		const fetchCookie = async () => {
+			const response = await fetch("http://localhost:1324/api/auth/test");
+			const data = await response.json();
+			console.log(data);
+		};
+	}, []);
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
@@ -35,14 +43,14 @@ const Signin = () => {
 
 		try {
 			const response = await fetch(
-				"http://127.0.0.1:1324/api/auth/signin",
+				"http://localhost:1324/api/auth/signin",
 				{
 					method: "POST",
-					// credentials: "include",
 					headers: {
 						"Content-Type": "application/json",
 					},
 					body: JSON.stringify(formData),
+					credentials: "include"
 				}
 			);
 			const data = await response.json();
