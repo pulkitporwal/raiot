@@ -19,29 +19,29 @@ const NavbarHome = () => {
                     <h4 className="text-2xl ml-2 md:ml-5 tracking-widest">RAIoT</h4>
                 </Link>
                 <div className="md:flex hidden">
-                    <ul className="flex space-x-4">
+                    <ul className="flex space-x-4 items-center justify-center">
                         <li>
-                            <Link to="/" className="">
+                            <Link to="/" className="top-3">
                                 Home
                             </Link>
                         </li>
                         <li>
-                            <Link to="/projects" className="">
+                            <Link to="/projects" className="top-3">
                                 Projects
                             </Link>
                         </li>
                         <li>
-                            <Link to="/team" className="">
+                            <Link to="/team" className="top-3">
                                 Team
                             </Link>
                         </li>
                         <li>
-                            <Link to="/faq" className="">
+                            <Link to="/faq" className="top-3">
                                 FAQ
                             </Link>
                         </li>
                         <li>
-                            <Link to="/signup" className="">
+                            <Link to="/signup" className="top-3">
                                 Register
                             </Link>
                         </li>
