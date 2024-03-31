@@ -1,0 +1,210 @@
+* {
+	user-select: none;
+}
+
+.cursor {
+	position: fixed;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	background-color: #ff00ddbe;
+	transition: all 0.1s ease;
+	transform: center center;
+	pointer-events: none;
+	z-index: 10000;
+}
+.bg-pattern {
+	background-image: url("../assets/pattern.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.text-gradient {
+	background: linear-gradient(267.91deg, #ffe57f 9.35%, #ff7170 96.48%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	font-size: 90px;
+	width: 98%;
+	font-weight: bolder;
+	line-height: 1.2;
+}
+.section-heading {
+	background: linear-gradient(267.91deg, #ffe57f 9.35%, #ff7170 96.48%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	font-size: 90px;
+	width: 98%;
+	font-weight: bolder;
+	line-height: 1.2;
+	transition: all 800ms ease-in-out;
+}
+.section-heading:hover {
+	letter-spacing: 10px;
+}
+.paragraph-gradient {
+	color: transparent;
+	font-size: 2rem; /* Adjust font size as needed */
+	font-weight: normal; /* Use normal instead of bolder for paragraph text */
+	line-height: 1.5; /* Adjust line height as needed */
+	position: relative; /* Added position relative to enable positioning of the ::after pseudo-element */
+}
+
+.paragraph-gradient span {
+	display: inline-block;
+	position: relative;
+	background: linear-gradient(267.91deg, #d3cce3, #e9e4f0);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	margin-bottom: 5px;
+}
+
+.paragraph-gradient span::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);
+	transform-origin: bottom right;
+	transition: transform 0.25s ease-out;
+}
+
+.paragraph-gradient:hover span::after {
+	transform: scaleX(1);
+	transform-origin: bottom left;
+}
+nav {
+	background: linear-gradient(267.91deg, #ffe57f 9.35%, #ff7170 96.48%);
+}
+.button {
+	font-family: "alliance", mono, sans-serif;
+	z-index: 1;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: none;
+	font-weight: 600;
+	font-size: 14px;
+	padding: 4px 28px;
+	height: 56px;
+	border-radius: 0;
+	overflow: hidden;
+	background: transparent;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+	font-feature-settings: "salt" on, "ss01" on, "ss02" on;
+	color: #fff;
+	border: 2px solid #ff7571;
+	box-shadow: 0 0 0 0 rgb(0, 0, 255);
+	transition: all 150ms ease-in-out;
+}
+.gradient-hr {
+	background: linear-gradient(
+		269.16deg,
+		#ffe580 -15.83%,
+		#ff7571 -4.97%,
+		#ff7270 15.69%,
+		#ea5dad 32.43%,
+		#c2a0fd 50.09%,
+		#9867f0 67.47%,
+		#3bf0e4 84.13%,
+		#33ce43 105.13%,
+		#b2f4b6 123.24%
+	);
+	height: 8px;
+}
+.button:hover {
+	background: linear-gradient(
+		269.16deg,
+		#ffe580 -15.83%,
+		#ff7571 -4.97%,
+		#ff7270 15.69%,
+		#ea5dad 32.43%,
+		#c2a0fd 50.09%,
+		#9867f0 67.47%,
+		#3bf0e4 84.13%,
+		#33ce43 105.13%,
+		#b2f4b6 123.24%
+	);
+	background-position: 58% 50%;
+	background-size: 500%;
+	color: black;
+	box-shadow: 0 0 10px 0 #ff7270 inset, 0 0 10px 4px #ff7270;
+}
+a,
+svg {
+	display: block;
+}
+a {
+	display: inline-block;
+	position: relative;
+	height: 50px;
+	width: 50px;
+}
+.icon {
+	background: black;
+	border-radius: 100%;
+	color: white;
+	fill: white;
+	transition: all 800ms ease-in-out;
+	margin-top: 25px;
+}
+.icon:hover {
+	background: white;
+	color: black;
+	fill: black;
+}
+.linkedin:hover {
+	color: #007bb6;
+	fill: #007bb6;
+}
+.instagram {
+    background: black;
+    border-radius: 100%;
+    color: black;
+    fill: black;
+    transition: all 800ms ease-in-out;
+    margin-top: 25px;
+	margin-left: 15px;
+}
+
+.instagram:hover {
+    background: rgb(221, 13, 117);
+    color: black;
+    fill: black;
+}
+
+.gradient {
+	background: linear-gradient(
+		269.16deg,
+		#ffe580 -15.83%,
+		#ff7571 -4.97%,
+		#ff7270 15.69%,
+		#ea5dad 32.43%,
+		#c2a0fd 50.09%,
+		#9867f0 67.47%,
+		#3bf0e4 84.13%,
+		#33ce43 105.13%,
+		#b2f4b6 123.24%
+	);
+}
+
+@media only screen and (max-width: 600px) {
+	.cursor {
+		display: none;
+	}
+	.text-gradient {
+		font-size: 70px;
+		width: 100%;
+		padding: 20px;
+	}
+	nav {
+		margin-right: 10px;
+	}
+}

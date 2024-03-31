@@ -62,7 +62,9 @@ const markAttendance = async (req, res) => {
 const myAttendances = async (req, res) => {
 	const user = req.cookies.accessToken;
 
-	console.log(user);
+    console.log(user)
+
+	
 };
 
 export { markAttendance, myAttendances };

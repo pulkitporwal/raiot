@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./assets/style.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Signin from "./pages/Signin";
@@ -8,13 +9,14 @@ import Profile from "./pages/Profile";
 import Conditions from "./pages/Conditions";
 import Terms from "./pages/Terms";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Navbar from "./components/Navbar.jsx"
 import MarkAttendance from "./pages/MarkAttendance.jsx";
+
 
 function App() {
 	return (
 		<BrowserRouter>
-		{/* <Navbar/> */}
+			{/* <Navbar/> */}
+			<div className="cursor"></div>
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/about" element={<About />} />
@@ -25,7 +27,10 @@ function App() {
 
 				<Route element={<ProtectedRoute />}>
 					<Route path="/dashboard" element={<Dashboard />} />
-					<Route path="/mark-attendance" element={<MarkAttendance />} />
+					<Route
+						path="/mark-attendance"
+						element={<MarkAttendance />}
+					/>
 					<Route path="/profile" element={<Profile />} />
 				</Route>
 			</Routes>

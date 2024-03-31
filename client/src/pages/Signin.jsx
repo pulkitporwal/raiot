@@ -50,7 +50,7 @@ const Signin = () => {
 						"Content-Type": "application/json",
 					},
 					body: JSON.stringify(formData),
-					credentials: "include"
+					credentials: "include",
 				}
 			);
 			const data = await response.json();
@@ -59,17 +59,17 @@ const Signin = () => {
 			if (data.success) {
 				toast.success(data.message);
 				setTimeout(() => {
-					dispatch(signinSuccess(data)); // Dispatch success action upon successful sign-in
+					dispatch(signinSuccess(data.userInfo)); // Dispatch success action with user data
 					navigate("/dashboard");
 				}, 500);
 			} else {
-				dispatch(signinFail(data));
-				toast.error(error.message);
+				dispatch(signinFail(data.error)); // Pass error message to signinFail action
+				toast.error(data.error); // Use error message from response
 			}
 		} catch (error) {
 			console.error("Error submitting data:", error);
-			dispatch(signinFail());
-			toast.error(error.message);
+			dispatch(signinFail(error.message)); // Pass error message to signinFail action
+			toast.error("An error occurred while signing in."); // Fallback error message
 		}
 	};
 
