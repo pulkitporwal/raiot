@@ -49,7 +49,7 @@ const Home = () => {
 				</p>
 			</section>
 
-			<section className="absolute h-[90vh] sm:h-[80vh] text-white bg-[#050505] text-center top-[175vh] sm:top-[160vh] px-5 sm:px-48">
+			<section className="absolute h-[90vh] sm:h-[80vh] text-white bg-[#050505] text-center top-[190vh] sm:top-[165vh] px-5 sm:px-48">
 				<h3 className="uppercase text-6xl font-black mt-24 section-heading">
 					Our Mission
 				</h3>
@@ -61,14 +61,14 @@ const Home = () => {
 					<span> technical skills, </span>
 					<span>and engage in exciting projects </span>
 					<span>that push the boundaries of </span>
-					<span>innovation. We</span>
+					<span>innovation. We </span>
 					<span>believe in the power of robotics to</span>
 					<span> shape the future and aim </span>
 					<span>to inspire the next generation</span>
 					<span> of leaders in the field.</span>
 				</p>
 			</section>
-			<section className="absolute h-[131vh] sm:h-[150vh] text-white bg-[#050505] text-center top-[250vh] sm:top-[215vh] px-5 sm:px-48">
+			<section className="absolute h-[131vh] sm:h-[150vh] text-white bg-[#050505] text-center top-[270vh] sm:top-[220vh] px-5 sm:px-48">
 				<h3 className="uppercase text-6xl font-black mt-24 section-heading">
 					WHAT WE DO
 				</h3>
@@ -128,9 +128,9 @@ const Home = () => {
 					</div>
 				</p>
 			</section>
-			<div className="gradient-hr absolute w-[99.99%] mt-14 top-[370vh] sm:top-[330vh]"></div>
+			<div className="gradient-hr absolute w-[99.99%] mt-14 top-[394vh] sm:top-[340vh]"></div>
 			<section
-				className="absolute w-[99.99%] h-[90vh] sm:h-[100vh] text-white bg-[#050505] text-center top-[380vh] sm:top-[340vh] px-5 sm:px-48 bg-center bg-cover"
+				className="absolute w-[99.99%] h-[100vh] sm:h-[100vh] text-white bg-[#050505] text-center top-[401vh] sm:top-[350vh] px-5 sm:px-48 bg-center bg-cover"
 				style={{
 					backgroundImage: `url(${pattern3})`,
 					backgroundColor: `rgba(255, 255, 255, 0.1)`,
@@ -171,8 +171,8 @@ const Home = () => {
 					</p>
 				</p>
 			</section>
-			<div className="gradient-hr absolute w-[99.99%] mt-14 top-[370vh] sm:top-[430vh]"></div>
-			<section className="absolute w-[99.99%] h-[100vh] sm:h-[90vh] text-white bg-[#050505] text-center top-[380vh] sm:top-[440vh] px-5 sm:px-48 bg-center bg-cover">
+			<div className="gradient-hr absolute w-[99.99%] mt-14 top-[494vh] sm:top-[440vh]"></div>
+			<section className="absolute w-[99.99%] h-[75vh] sm:h-[90vh] text-white bg-[#050505] text-center top-[501vh] sm:top-[450vh] px-5 sm:px-48 bg-center bg-cover">
 				<h3 className="uppercase text-6xl font-black mt-24 section-heading">
 					Contact Us
 				</h3>
@@ -296,8 +296,8 @@ const Home = () => {
 					</p>
 				</p>
 			</section>
-			<div className="gradient-hr absolute w-[99.99%] mt-14 top-[450vh] sm:top-[520vh]"></div>
-			<section className="absolute w-[99.99%] h-[60vh] md:h-[40vh] sm:h-[80vh] text-white bg-[#050505] text-center top-[460vh] sm:top-[530vh] px-5 sm:px-48 bg-center bg-cover">
+			<div className="gradient-hr absolute w-[99.99%] mt-14 top-[569vh] sm:top-[530vh]"></div>
+			<section className="absolute w-[99.99%] h-[65vh] md:h-[45vh] sm:h-[80vh] text-white bg-[#050505] text-center top-[576vh] sm:top-[540vh] px-5 sm:px-48 bg-center bg-cover">
 				<div className="flex flex-col md:flex-row items-center justify-center gap-16 mt-16">
 					<img
 						src={logo}
