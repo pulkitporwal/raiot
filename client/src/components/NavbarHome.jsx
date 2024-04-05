@@ -12,7 +12,7 @@ const NavbarHome = () => {
     return (
         <nav className="bg-[#c5c5c5] rounded-2xl z-10 px-5 py-3 md:px-10">
             <div className="container flex justify-between items-center">
-                <Link to="/" className="flex items-center">
+                <Link to="/" className="flex items-center w-52">
                     <div className="bg-white rounded-full">
                         <img src={logo} alt="RAIoT" className="w-[3.9rem]" />
                     </div>
@@ -87,7 +87,7 @@ const NavbarHome = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/team" className="">
+                            <Link to="/teams" className="">
                                 Team
                             </Link>
                         </li>

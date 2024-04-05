@@ -1,6 +1,9 @@
 * {
 	user-select: none;
 }
+body{
+	background: #050505;
+}
 
 .cursor {
 	position: fixed;
@@ -375,4 +378,90 @@ body {
 		padding: 8px 15px;
 		font-size: 15px;
 	}
+}
+.accordion {
+	-webkit-box-shadow: 0px 13px 23px -13px rgba(0, 0, 0, 0.5);
+	width: 420px;
+	background-color: transparent;
+	margin: auto;
+	margin-top: 50px;
+}
+
+.title {
+	width: 800px; /* Adjust as needed */
+	background-color: rgba(0, 0, 0, 0.4);
+	color: #ffddcc;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-align: left;
+	line-height: 1.5; /* Adjust line height */
+	font-weight: lighter;
+	position: relative;
+	padding: 10px;
+	z-index: 2000;
+	border-radius: 4px;
+	margin-top: 2px;
+	transition: all 0.2s ease-in;
+}
+
+.title-text {
+	margin-left: 10px;
+	word-wrap: break-word; /* Allow text to wrap */
+}
+
+.title:hover {
+	cursor: pointer;
+	background-color: rgba(221, 221, 221, 0.5);
+}
+
+.title:active {
+	background-color: rgba(117, 100, 51, 0.55);
+}
+
+.content {
+	width: 800px; /* Adjust as needed */
+	background-color: transparent;
+	border-radius: 4px;
+	color: white;
+	font-size: 14px;
+	text-align: left;
+	position: relative;
+	z-index: 1000;
+	margin-top: 5px;
+	line-height: 1.5; /* Adjust line height */
+	transition: height 0.3s ease-in-out; /* Smoothly animate height change */
+}
+
+.content-open {
+	height: auto; /* Allow content to expand */
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.content-text {
+	padding: 15px;
+	visibility: hidden;
+	opacity: 0;
+	overflow: auto;
+	transition: all 0.2s ease-in;
+}
+
+.content-text-open {
+	visibility: visible;
+	opacity: 1;
+	transition: all 0.8s ease-in;
+}
+
+.fa-angle-down {
+	font-size: 20px;
+	color: rgba(255, 255, 255, 0.5);
+	transition: all 0.6s cubic-bezier(0.08, 1.09, 0.32, 1.275);
+}
+
+.fa-rotate-180 {
+	color: rgba(255, 255, 255, 1);
+}
+
+.arrow-wrapper {
+	position: absolute;
+	margin-left: 375px;
 }

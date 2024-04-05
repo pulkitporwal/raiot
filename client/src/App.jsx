@@ -10,6 +10,7 @@ import Terms from "./pages/Terms";
 import ProtectedRoute from "./components/ProtectedRoute";
 import MarkAttendance from "./pages/MarkAttendance.jsx";
 import Teams from "./pages/Teams.jsx";
+import FAQ from "./pages/FAQ.jsx";
 
 
 
@@ -23,6 +24,7 @@ function App() {
 				<Route path="/signup" element={<Signup />} />
 				<Route path="/terms" element={<Terms />} />
 				<Route path="/teams" element={<Teams />} />
+				<Route path="/faq" element={<FAQ />} />
 				<Route path="/conditions" element={<Conditions />} />
 
 				<Route element={<ProtectedRoute />}>
