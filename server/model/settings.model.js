@@ -5,6 +5,12 @@ const settingsSchema = new mongoose.Schema({
 		type: Boolean,
 		default: false,
 	},
+	finePerDay: {
+		type: Number,
+	},
+	attendanceRange: {
+		type: Number,
+	},
 });
 
 export const Settings = mongoose.model("Settings", settingsSchema);

@@ -11,4 +11,10 @@ const componentSchema = new mongoose.Schema({
 		required: true,
 		index: true,
 	},
+	isIssued: {
+		type: Boolean,
+		default: false,
+	},
 });
+
+export const Component = mongoose.model("Component", componentSchema);

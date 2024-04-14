@@ -1,11 +1,12 @@
 import { Settings } from "../model/settings.model.js";
 import { Attendance } from "../model/attendance.model.js";
+import { fetchSettings } from "../utils/fetchSettings.js";
 
 const markAttendance = async (req, res) => {
 	try {
-		const { platformEnabled } = await Settings.findOne({});
+		const settings = await fetchSettings();
 
-		if (!platformEnabled) {
+		if (!settings.platformEnabled) {
 			return res.status(403).json({
 				success: false,
 				message:

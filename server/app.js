@@ -19,4 +19,10 @@ app.use("/api/auth", authRouter);
 import attendanceRouter from "./route/attendance.route.js";
 app.use("/api/attendance", attendanceRouter);
 
+import componentRouter from "./route/component.route.js";
+app.use("/api/component", componentRouter);
+
+import issueComponentsRouter from "./route/issuedComponents.route.js";
+app.use("/api/issue-components", issueComponentsRouter);
+
 export default app;

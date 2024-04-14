@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-const issueComponentsSchema = new mongoose.Schema({
+const issuedComponentsSchema = new mongoose.Schema({
 	userId: {
 		type: Schema.Types.ObjectId,
 		ref: "User",
@@ -21,4 +21,17 @@ const issueComponentsSchema = new mongoose.Schema({
 		default: Date.now(),
 		required: true,
 	},
+	isReturned: {
+		type: Boolean,
+		default: false,
+	},
+	returnVerification: {
+		type: Boolean,
+		default: false,
+	},
 });
+
+export const issuedComponents = mongoose.model(
+	"issuedComponents",
+	issuedComponentsSchema
+);
