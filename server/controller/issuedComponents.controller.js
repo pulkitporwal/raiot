@@ -98,10 +98,11 @@ export const returnIssuedComponent = async (req, res) => {
 				});
 			}
 		}
-
+		issuingDetails.isReturned = true;
 		component.isIssued = false;
 
 		await component.save();
+		await issuingDetails.save();
 
 		return res.status(200).json({
 			success: true,

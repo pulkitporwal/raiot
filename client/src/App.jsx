@@ -11,13 +11,13 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import MarkAttendance from "./pages/MarkAttendance.jsx";
 import Teams from "./pages/Teams.jsx";
 import FAQ from "./pages/FAQ.jsx";
+import Event from "./pages/Event.jsx";
 
 
 
 function App() {
 	return (
 		<BrowserRouter>
-			{/* <Navbar/> */}
 			<Routes>	
 				<Route path="/" element={<Home />} />
 				<Route path="/signin" element={<Signin />} />
@@ -26,6 +26,7 @@ function App() {
 				<Route path="/teams" element={<Teams />} />
 				<Route path="/faq" element={<FAQ />} />
 				<Route path="/conditions" element={<Conditions />} />
+				<Route path="/events" element={<Event />} />
 
 				<Route element={<ProtectedRoute />}>
 					<Route path="/dashboard" element={<Dashboard />} />

@@ -11,6 +11,9 @@ const settingsSchema = new mongoose.Schema({
 	attendanceRange: {
 		type: Number,
 	},
+	numberOfWorkingDays:{
+		type: Number,
+	}
 });
 
 export const Settings = mongoose.model("Settings", settingsSchema);

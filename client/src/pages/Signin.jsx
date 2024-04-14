@@ -27,7 +27,7 @@ const Signin = () => {
 		if (information.userInfo) {
 			navigate("/dashboard");
 		}
-	}, [information.userInfo, navigate]);
+	}, [information.userInfo]);
 
 	useEffect(() => {
 		const fetchCookie = async () => {
@@ -59,24 +59,24 @@ const Signin = () => {
 			if (data.success) {
 				toast.success(data.message);
 				setTimeout(() => {
-					dispatch(signinSuccess(data.userInfo)); // Dispatch success action with user data
+					dispatch(signinSuccess(data.userInfo)); 
 					navigate("/dashboard");
 				}, 500);
 			} else {
-				dispatch(signinFail(data.error)); // Pass error message to signinFail action
-				toast.error(data.error); // Use error message from response
+				dispatch(signinFail(data.error)); 
+				toast.error(data.message); 
 			}
 		} catch (error) {
 			console.error("Error submitting data:", error);
-			dispatch(signinFail(error.message)); // Pass error message to signinFail action
-			toast.error("An error occurred while signing in."); // Fallback error message
+			dispatch(signinFail(error.message));
+			toast.error("An error occurred while signing in."); 
 		}
 	};
 
 	return (
 		<div className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
 			{information.loading && <Loader />}{" "}
-			{/* Adjusted condition for rendering Loader */}
+		
 			<Toaster />
 			<div className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md">
 				<div className="p-4 py-6 text-white bg-gray-900 md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly">
@@ -142,12 +142,7 @@ const Signin = () => {
 								>
 									Password
 								</label>
-								{/* <a
-                  href="#"
-                  className="text-sm text-gray-900 hover:underline focus:text-gray-900"
-                >
-                  Forgot Password?
-                </a> */}
+								
 							</div>
 							<input
 								type="password"

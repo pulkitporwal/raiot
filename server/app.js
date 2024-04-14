@@ -25,4 +25,7 @@ app.use("/api/component", componentRouter);
 import issueComponentsRouter from "./route/issuedComponents.route.js";
 app.use("/api/issue-components", issueComponentsRouter);
 
+import eventRouter from "./route/event.route.js";
+app.use("/api/event", eventRouter);
+
 export default app;
