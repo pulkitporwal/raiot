@@ -33,10 +33,10 @@ const userSchema = new mongoose.Schema(
 			type: String,
 			default: "Normal User",
 		},
-		banUserToIssueComponent : {
+		banUserToIssueComponent: {
 			type: Boolean,
 			default: false,
-		}
+		},
 	},
 	{
 		timestamps: true,
