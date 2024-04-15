@@ -12,6 +12,7 @@ import MarkAttendance from "./pages/MarkAttendance.jsx";
 import Teams from "./pages/Teams.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import Event from "./pages/Event.jsx";
+import EventInformation from "./pages/EventInformation.jsx";
 
 
 
@@ -27,6 +28,7 @@ function App() {
 				<Route path="/faq" element={<FAQ />} />
 				<Route path="/conditions" element={<Conditions />} />
 				<Route path="/events" element={<Event />} />
+				<Route path="/event/:eventId" element={<EventInformation />} />
 
 				<Route element={<ProtectedRoute />}>
 					<Route path="/dashboard" element={<Dashboard />} />

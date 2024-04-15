@@ -20,4 +20,7 @@ router.route("/mark-complete").post(verifyJWT,markComplete);
 import { removeEvent } from "../controller/events.controller.js";
 router.route("/remove-event").post(verifyJWT,removeEvent);
 
+import { getAllEvents } from "../controller/events.controller.js";
+router.route("/get-all-events").get(getAllEvents);
+
 export default router;

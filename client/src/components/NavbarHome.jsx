@@ -45,6 +45,14 @@ const NavbarHome = () => {
 						</li>
 						<li>
 							<Link
+								to="/events"
+								className="top-3 hover:text-pink-700"
+							>
+								<pre> Events</pre>
+							</Link>
+						</li>
+						<li>
+							<Link
 								to="/faq"
 								className="top-3 hover:text-pink-700"
 							>
@@ -113,6 +121,11 @@ const NavbarHome = () => {
 						<li>
 							<Link to="/teams" className="">
 								Team
+							</Link>
+						</li>
+						<li>
+							<Link to="/events" className="">
+								Events
 							</Link>
 						</li>
 						<li>

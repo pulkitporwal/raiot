@@ -174,3 +174,22 @@ export const removeEvent = async (req, res) => {
 		});
 	}
 };
+
+export const getAllEvents = async (req, res) => {
+	try {
+		const eventData = await Event.find({ isCompleted: false });
+
+		return res.status(500).json({
+			success: true,
+			message: "Events Fetched Successfully",
+			eventData,
+		});
+	} catch (error) {
+		console.error("Error while getting all events:\n", error);
+		return res.status(500).json({
+			success: false,
+			message: "Internal server error",
+		});
+	}
+};
+
