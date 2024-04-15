@@ -13,13 +13,14 @@ import Teams from "./pages/Teams.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import Event from "./pages/Event.jsx";
 import EventInformation from "./pages/EventInformation.jsx";
-
-
+import IssueComponent from "./pages/IssueComponent.jsx";
+import AddComponent from "./pages/AddComponent.jsx";
+import Unauthorized from "./pages/Unauthorized.jsx";
 
 function App() {
 	return (
 		<BrowserRouter>
-			<Routes>	
+			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/signin" element={<Signin />} />
 				<Route path="/signup" element={<Signup />} />
@@ -29,14 +30,39 @@ function App() {
 				<Route path="/conditions" element={<Conditions />} />
 				<Route path="/events" element={<Event />} />
 				<Route path="/event/:eventId" element={<EventInformation />} />
+				<Route path="/unauthorized" element={<Unauthorized />} />
 
-				<Route element={<ProtectedRoute />}>
+				<Route
+					element={
+						<ProtectedRoute
+							userType={[
+								"Admin",
+								"Super Admin",
+								"Developer",
+								"Normal User",
+							]}
+						/>
+					}
+				>
 					<Route path="/dashboard" element={<Dashboard />} />
+					<Route
+						path="/issue-component"
+						element={<IssueComponent />}
+					/>
 					<Route
 						path="/mark-attendance"
 						element={<MarkAttendance />}
 					/>
 					<Route path="/profile" element={<Profile />} />
+				</Route>
+				<Route
+					element={
+						<ProtectedRoute
+							userType={["Admin", "Super Admin", "Developer"]}
+						/>
+					}
+				>
+					<Route path="/add-component" element={<AddComponent />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
