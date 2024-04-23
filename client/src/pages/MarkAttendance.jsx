@@ -90,42 +90,11 @@ const MarkAttendance = () => {
 									: "Location not loaded"}
 							</p>
 							<button
-								className="ml-2 bg-yellow-400 px-2 py-1 rounded-md text-white hover:bg-yellow-500 transition-colors flex items-center"
+								className="ml-2 bg-yellow-400 px-2 disabled:cursor-not-allowed disabled:opacity-50 py-1 rounded-md hover:bg-yellow-500 transition-colors flex items-center"
 								onClick={loadLocation}
+								disabled={currentLatitude && currentLongitude}
 							>
-								<svg
-									fill="#000000"
-									width="22px"
-									height="22px"
-									viewBox="0 0 24 24"
-									id="download"
-									data-name="Line Color"
-									xmlns="http://www.w3.org/2000/svg"
-									className="icon line-color"
-								>
-									<path
-										id="secondary"
-										d="M20,17v3a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V17"
-										style={{
-											fill: "none",
-											stroke: "rgb(0,0,0~)",
-											strokeLinecap: "round",
-											strokeLinejoin: "round",
-											strokeWidth: 2,
-										}}
-									/>
-									<path
-										id="primary"
-										d="M5.65,10.56,7,9a1,1,0,0,1,1.41-.11L10,10.34V3h4v7.34l1.64-1.41A1,1,0,0,1,17.05,9l1.3,1.52A1,1,0,0,1,18.24,12l-5.59,4.79a1,1,0,0,1-1.3,0L5.76,12A1,1,0,0,1,5.65,10.56Z"
-										style={{
-											fill: "none",
-											stroke: "rgb(0, 0, 0)",
-											strokeLinecap: "round",
-											strokeLinejoin: "round",
-											strokeWidth: 2,
-										}}
-									/>
-								</svg>
+								Get Location
 							</button>
 						</div>
 						<textarea

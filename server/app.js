@@ -38,4 +38,10 @@ app.use("/api/issue-components", issueComponentsRouter);
 import eventRouter from "./route/event.route.js";
 app.use("/api/event", eventRouter);
 
+import userRouter from "./route/user.route.js";
+app.use("/api/user", userRouter);
+
+import settingsRouter from "./route/settings.route.js";
+app.use("/api/settings", settingsRouter);
+
 export default app;

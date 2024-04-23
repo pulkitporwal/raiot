@@ -135,8 +135,5 @@ const signout = async (req, res) => {
     }
 };
 
-const test = async (req, res) => {
-    res.cookie("token", "12345689", { httpOnly: true });
-};
 
-export { signup, signin, signout, test };
+export { signup, signin, signout };

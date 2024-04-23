@@ -50,7 +50,8 @@ const FAQ = () => {
 	};
 
 	return (
-		<div className="bg-[#050505] h-screen bg-center bg-cover">
+			
+		<div className="bg-[#050505] h-[180vh] bg-center bg-cover">
 			<div className="absolute z-10 mx-4 sm:mx-7 my-6 w-[95%]">
 				<NavbarHome />
 			</div>

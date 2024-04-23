@@ -115,7 +115,7 @@ const Signup = () => {
 								Email address
 							</label>
 							<input
-								type="text"
+								type="email"
 								id="email"
 								value={formData.email}
 								onChange={handleChange}

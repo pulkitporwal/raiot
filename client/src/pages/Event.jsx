@@ -49,8 +49,8 @@ const Event = () => {
 					EVENTS
 				</h3>
 			</section>
-			<section className="flex items-center flex-col gap-12 justify-center w-full absolute top-[40vh] sm:top-[60vh] text-center">
-				<div className="flex px-28 mb-20 sm:mb-32 items-center justify-start gap-20 flex-wrap">
+			<section className="flex items-center flex-col gap-12 justify-center w-full absolute top-[40vh] sm:top-[60vh] text-center overflow-hidden">
+				<div className="flex overflow-hidden px-28 mb-20 sm:mb-32 items-center justify-center gap-16 flex-wrap">
 					{eventData.map((event) => {
 						return (
 							<EventCard

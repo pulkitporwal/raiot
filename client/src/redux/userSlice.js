@@ -15,15 +15,25 @@ const userSlice = createSlice({
       state.error = null; // Reset error when starting sign-in
     },
     signinSuccess: (state, action) => {
-      state.currentUser = action.payload; // Updated key to currentUser
+      state.currentUser = action.payload;
       state.loading = false;
     },
     signinFail: (state, action) => {
       state.error = action.payload;
       state.loading = false;
     },
+    updateUserInformationSuccess: (state, action) => {
+      console.log("PAYLOAD",action.payload)
+      state.currentUser = action.payload;
+      state.loading = false;
+    },
   },
 });
 
-export const { signinStart, signinSuccess, signinFail } = userSlice.actions;
+export const {
+  signinStart,
+  signinSuccess,
+  signinFail,
+  updateUserInformationSuccess,
+} = userSlice.actions;
 export default userSlice.reducer;

@@ -25,7 +25,7 @@ const eventSchema = new mongoose.Schema(
 			type: String,
 		},
 		prize: {
-			type: Number,
+			type: String,
 		},
 		location: {
 			type: String,
@@ -44,3 +44,4 @@ const eventSchema = new mongoose.Schema(
 );
 
 export const Event = mongoose.model("Event", eventSchema);
+	

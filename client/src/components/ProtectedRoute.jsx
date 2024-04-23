@@ -9,7 +9,7 @@ export default function ProtectedRoute({ userType }) {
     return <Navigate to="/signin" />;
   }
 
-  if (userType && !userType.includes(currentUser.role)) {
+  if (userType && !userType.includes(currentUser.userType)) {
     return <Navigate to="/unauthorized" />;
   }
 
