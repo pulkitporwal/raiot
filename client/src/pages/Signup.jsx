@@ -29,7 +29,7 @@ const Signup = () => {
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 
-		const response = await fetch("https://raiot.onrender.com/api/auth/signup", {
+		const response = await fetch("https://raiot-b91o.onrender.com/api/auth/signup", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

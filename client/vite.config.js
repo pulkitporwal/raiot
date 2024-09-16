@@ -6,7 +6,7 @@ export default defineConfig({
 	// server:{
 	// 	proxy: {
 	// 		'/api': {
-	// 			target: 'https://raiot.onrender.com',
+	// 			target: 'https://raiot-b91o.onrender.com',
 	// 			changeOrigin: true,
 	// 			rewrite: (path) => path.replace(/^\/api/, ''),
 	// 		  },

@@ -12,7 +12,7 @@ const AdvanceOptions = () => {
       setIsLoading(true);
       try {
         const response = await fetch(
-          "https://raiot.onrender.com/api/settings/fetch-settings",
+          "https://raiot-b91o.onrender.com/api/settings/fetch-settings",
           { credentials: "include" }
         );
         const data = await response.json();
@@ -40,7 +40,7 @@ const AdvanceOptions = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        "https://raiot.onrender.com/api/settings/edit-settings",
+        "https://raiot-b91o.onrender.com/api/settings/edit-settings",
         {
           method: "POST",
           credentials: "include",

@@ -12,7 +12,7 @@ const AllEvents = () => {
   useEffect(() => {
     const fetchMembers = async () => {
       setIsLoading(true)
-      const response = await fetch("https://raiot.onrender.com/api/user/fetch-members", { credentials: "include" })
+      const response = await fetch("https://raiot-b91o.onrender.com/api/user/fetch-members", { credentials: "include" })
       const data = await response.json();
 
       console.log(data)
@@ -64,7 +64,7 @@ const AllEvents = () => {
   const handleSubmit = async () => {
     try {
       setIsLoading(true)
-      const response = await fetch("https://raiot.onrender.com/api/user/update-members", {
+      const response = await fetch("https://raiot-b91o.onrender.com/api/user/update-members", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

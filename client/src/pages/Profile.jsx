@@ -47,7 +47,7 @@ const Profile = () => {
     formDataToSend.append('avatarURL', formData.avatarURL); // Add this line
 
     try {
-      const response = await fetch("https://raiot.onrender.com/api/user/update-information", {
+      const response = await fetch("https://raiot-b91o.onrender.com/api/user/update-information", {
         method: "POST",
         credentials: "include",
         body: formDataToSend

@@ -58,7 +58,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     setLoading(true);
 
-    const response = await fetch("https://raiot.onrender.com/api/auth/signout", {
+    const response = await fetch("https://raiot-b91o.onrender.com/api/auth/signout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
