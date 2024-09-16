@@ -4,21 +4,22 @@ import cors from "cors";
 
 const app = express();
 
-const allowedOrigins = ["https://raiot-b91o.onrender.com", "*"];
+// const allowedOrigins = ["https://raiot-b91o.onrender.com", "*"];
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       if (!origin || allowedOrigins.includes(origin)) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error("Not allowed by CORS"));
+//       }
+//     },
+//     credentials: true,
+//   })
+// );
 
+app.use(cors());
 app.use(express.json({ limit: "20kb" }));
 app.use(express.urlencoded({ limit: "20kb", extended: true }));
 app.use(cookieParser());
