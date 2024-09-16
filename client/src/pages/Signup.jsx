@@ -180,7 +180,7 @@ const Signup = () => {
                 type="checkbox"
                 id="remember"
                 checked={rememberMe}
-                onChange={handleChange}
+                onChange={() => setRememberMe(!rememberMe)}
                 className="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-gray-900"
               />
               <label
