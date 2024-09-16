@@ -31,7 +31,7 @@ const Signin = () => {
 
 	useEffect(() => {
 		const fetchCookie = async () => {
-			const response = await fetch("https://raiot-b91o.onrender.com/api/auth/test");
+			const response = await fetch("https://raiot-1.onrender.com/api/auth/test");
 			const data = await response.json();
 			console.log(data);
 		};
@@ -43,7 +43,7 @@ const Signin = () => {
 
 		try {
 			const response = await fetch(
-				"https://raiot-b91o.onrender.com/api/auth/signin",
+				"https://raiot-1.onrender.com/api/auth/signin",
 				{
 					method: "POST",
 					headers: {

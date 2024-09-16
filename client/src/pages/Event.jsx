@@ -16,7 +16,7 @@ const Event = () => {
 		const fetchEvents = async () => {
 			try {
 				const response = await fetch(
-					"https://raiot-b91o.onrender.com/api/event/get-all-events"
+					"https://raiot-1.onrender.com/api/event/get-all-events"
 				);
 				const data = await response.json();
 

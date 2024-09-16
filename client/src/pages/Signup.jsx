@@ -31,7 +31,7 @@ const Signup = () => {
 
     try {
       const response = await fetch(
-        "https://raiot-b91o.onrender.com/api/auth/signup",
+        "https://raiot-1.onrender.com/api/auth/signup",
         {
           method: "POST",
           headers: {

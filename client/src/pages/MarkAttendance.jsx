@@ -43,7 +43,7 @@ const MarkAttendance = () => {
 		}
 
 		const response = await fetch(
-			"https://raiot-b91o.onrender.com/api/attendance/mark-attendance",
+			"https://raiot-1.onrender.com/api/attendance/mark-attendance",
 			{
 				method: "POST",
 				headers: {

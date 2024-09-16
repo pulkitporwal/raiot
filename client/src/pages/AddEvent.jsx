@@ -62,7 +62,7 @@ const AddEvents = () => {
     formDataToSend.append('location', formData.location);
 
     try {
-      const response = await fetch("https://raiot-b91o.onrender.com/api/event/add-event", {
+      const response = await fetch("https://raiot-1.onrender.com/api/event/add-event", {
         method: "POST",
         credentials: "include",
         body: formDataToSend
