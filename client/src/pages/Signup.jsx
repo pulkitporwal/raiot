@@ -1,12 +1,9 @@
-import React from "react";
-import { useState } from "react";
-import logo from "../assets/logo2.png";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
+import logo from "../assets/logo2.png";
 import Loader from "../components/Loader";
-import { signinSuccess } from "../redux/userSlice";
 
 const Signup = () => {
   const information = useSelector((state) => state.user);
@@ -29,29 +26,33 @@ const Signup = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch(
-      "https://raiot-b91o.onrender.com/api/auth/signup",
-      {
-        method: "POST",
-        headers: {
-          "Access-Control-Allow-Origin":"*",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-        // credentials: "include",
+    try {
+      const response = await fetch(
+        "https://raiot-b91o.onrender.com/api/auth/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+          credentials: "include", // Include cookies in the request
+        }
+      );
+
+      const data = await response.json();
+
+      console.log("Signup Response: ", data);
+
+      if (data.success) {
+        toast.success(data.message);
+        navigate("/signin");
+      } else {
+        console.log("Signup Error: ", data.error);
+        toast.error(data.message);
       }
-    );
-    const data = await response.json();
-
-    console.log("Signup Reponse: ", data);
-
-    if (data.success) {
-      toast.success(data.message);
-      navigate("/signin");
-    }
-    if (!data.success) {
-      console.log("Signup Error: ", data.error);
-      toast.error(data.message);
+    } catch (error) {
+      console.error("Signup failed: ", error);
+      toast.error("An error occurred during signup.");
     }
   };
 
@@ -97,7 +98,7 @@ const Signup = () => {
           <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
             <div className="flex flex-col space-y-1">
               <label
-                htmlFor="username"
+                htmlFor="userName"
                 className="text-sm font-semibold text-gray-500"
               >
                 Username
@@ -133,12 +134,6 @@ const Signup = () => {
                 >
                   Password
                 </label>
-                {/* <a
-									href="#"
-									className="text-sm text-gray-900 hover:underline focus:text-gray-900"
-								>
-									Forgot Password?
-								</a> */}
               </div>
               <input
                 type="password"
@@ -151,17 +146,11 @@ const Signup = () => {
             <div className="flex flex-col space-y-1">
               <div className="flex items-center justify-between">
                 <label
-                  htmlFor="confirmpassword"
+                  htmlFor="confirmPassword"
                   className="text-sm font-semibold text-gray-500"
                 >
                   Confirm Password
                 </label>
-                {/* <a
-									href="#"
-									className="text-sm text-gray-900 hover:underline focus:text-gray-900"
-								>
-									Forgot Password?
-								</a> */}
               </div>
               <input
                 type="password"
@@ -176,7 +165,7 @@ const Signup = () => {
                 type="checkbox"
                 id="remember"
                 checked={rememberMe}
-                onChange={handleChange}
+                onChange={() => setRememberMe(!rememberMe)}
                 className="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-gray-900"
               />
               <label
