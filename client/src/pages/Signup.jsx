@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
+import logo from "../assets/logo2.png";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
-import logo from "../assets/logo2.png";
 import Loader from "../components/Loader";
+import { signinSuccess } from "../redux/userSlice";
 
 const Signup = () => {
   const information = useSelector((state) => state.user);
@@ -98,7 +101,7 @@ const Signup = () => {
           <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
             <div className="flex flex-col space-y-1">
               <label
-                htmlFor="userName"
+                htmlFor="username"
                 className="text-sm font-semibold text-gray-500"
               >
                 Username
@@ -134,6 +137,12 @@ const Signup = () => {
                 >
                   Password
                 </label>
+                {/* <a
+									href="#"
+									className="text-sm text-gray-900 hover:underline focus:text-gray-900"
+								>
+									Forgot Password?
+								</a> */}
               </div>
               <input
                 type="password"
@@ -146,11 +155,17 @@ const Signup = () => {
             <div className="flex flex-col space-y-1">
               <div className="flex items-center justify-between">
                 <label
-                  htmlFor="confirmPassword"
+                  htmlFor="confirmpassword"
                   className="text-sm font-semibold text-gray-500"
                 >
                   Confirm Password
                 </label>
+                {/* <a
+									href="#"
+									className="text-sm text-gray-900 hover:underline focus:text-gray-900"
+								>
+									Forgot Password?
+								</a> */}
               </div>
               <input
                 type="password"
@@ -165,7 +180,7 @@ const Signup = () => {
                 type="checkbox"
                 id="remember"
                 checked={rememberMe}
-                onChange={() => setRememberMe(!rememberMe)}
+                onChange={handleChange}
                 className="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-gray-900"
               />
               <label
