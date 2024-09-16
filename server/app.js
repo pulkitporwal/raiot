@@ -4,19 +4,19 @@ import cors from "cors";
 
 const app = express();
 
-const allowedOrigins = ["http://localhost:5173", "http://192.168.146.96:5173"];
+const allowedOrigins = ["https://raiot-b91o.onrender.com", "*"];
 
 app.use(
-	cors({
-		origin: function (origin, callback) {
-			if (!origin || allowedOrigins.includes(origin)) {
-				callback(null, true);
-			} else {
-				callback(new Error("Not allowed by CORS"));
-			}
-		},
-		credentials: true,
-	})
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
 );
 
 app.use(express.json({ limit: "20kb" }));
